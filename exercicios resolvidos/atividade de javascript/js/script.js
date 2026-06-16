@@ -141,40 +141,16 @@ alert(
     "\nNovo salário: R$ " + novoSalario
 );
 */
-/*12
-let valorHora = Number(prompt("Valor da hora:"));
-let horas = Number(prompt("Horas trabalhadas:"));
+/*14
+let valorHora = Number(prompt("qual o valor da sua hora trabalhada"));
+let quantidadeHoras = Number(prompt("quantidades de hora trabalhadas:"));
+let salario = valorHora * quantidadeHoras
+let impostos = 0
+let salarioFinal = 0
+let inss = salario * 10 / 100
+let fgts = salario * 11 / 100
+let descontofgts = salario - fgts
 
-let bruto = valorHora * horas;
-
-let ir;
-
-if (bruto <= 900) {
-    ir = 0;
-} else if (bruto <= 1500) {
-    ir = bruto * 0.05;
-} else if (bruto <= 2500) {
-    ir = bruto * 0.10;
-} else {
-    ir = bruto * 0.20;
-}
-
-let inss = bruto * 0.10;
-let sindicato = bruto * 0.03;
-let fgts = bruto * 0.11;
-
-let descontos = ir + inss + sindicato;
-let liquido = bruto - descontos;
-
-alert(
-    "Salário Bruto: R$ " + bruto +
-    "\nIR: R$ " + ir +
-    "\nINSS: R$ " + inss +
-    "\nSindicato: R$ " + sindicato +
-    "\nFGTS: R$ " + fgts +
-    "\nSalário Líquido: R$ " + liquido
-);
-*/
 /*13
 let dia = Number(prompt("Digite um número de 1 a 7:"));
 
@@ -239,7 +215,7 @@ if (a + b > c && a + c > b && b + c > a) {
 } else {
     alert("Não forma um triângulo");
 }
-*/
+
 /*16
 let a = Number(prompt("Valor de A:"));
 let b = Number(prompt("Valor de B:"));
@@ -304,33 +280,46 @@ if (numero >= 0) {
 }
 */
 /*20
-let pontos = 0;
+function questionario() {
+let resposta_sim = 0
+let resposta_1 = (prompt("voce telefonou para a vitima?(s/n)")).toLowerCase()
+let resposta_2 = (prompt("esteve no localdo crime? (s/n)")).toLowerCase()
+let resposta_3 = (prompt("mora perto da vitima? (s/n)")).toLowerCase()
+let resposta_4 = (prompt("devia para a vitima? (s/n)")).toLowerCase()
+let resposta_5 = (prompt("ja trabalhou com a vitima? (s/n)")).toLowerCase()
 
-let p1 = prompt("Telefonou para a vítima? (s/n)");
-if (p1 == "s") pontos++;
-
-let p2 = prompt("Esteve no local do crime? (s/n)");
-if (p2 == "s") pontos++;
-
-let p3 = prompt("Mora perto da vítima? (s/n)");
-if (p3 == "s") pontos++;
-
-let p4 = prompt("Devia para a vítima? (s/n)");
-if (p4 == "s") pontos++;
-
-let p5 = prompt("Já trabalhou com a vítima? (s/n)");
-if (p5 == "s") pontos++;
-
-if (pontos == 2) {
-    alert("Suspeita");
-} else if (pontos == 3 || pontos == 4) {
-    alert("Cúmplice");
-} else if (pontos == 5) {
-    alert("Assassino");
-} else {
-    alert("Inocente");
+if(resposta_1 === "s"){
+    resposta_sim +=1
 }
-*/
+if (resposta_2 === "s"){
+    resposta_sim +=1
+}
+if(resposta_3 === "s"){
+    resposta_sim +=1
+}
+if(resposta_4 === "s"){
+    resposta_sim +=1
+}
+if(resposta_5 === "s"){
+    resposta_sim +=1
+}
+alert(resposta_sim)
+if (resposta_sim >= 5){
+    alert("assasino")
+}
+else if (resposta_sim >= 3){
+    alert("cumplice")
+}
+else if (resposta_sim >= 2){
+    alert("suspeita")
+}
+else {
+    alert("inocente")
+}
+
+}
+questionario()
+
 /*21
 let n1 = Number(prompt("Digite o primeiro número:"));
 let n2 = Number(prompt("Digite o segundo número:"));
